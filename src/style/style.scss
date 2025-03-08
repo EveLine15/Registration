@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$font: "Noto Sans", sans-serif;
+
+body{
+    background-color: #181818;
+}
+
+.container{
+    max-width: 740px;
+    margin: 15px auto;
+    color: white;
+}
+
+.auth{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $font;
+
+    h1{
+        color: #ff6031;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 15px;
+        width: 50%;
+        margin: 20px 0;
+
+        input{
+            font-family: $font;
+            height: 30px;
+            padding: 5px;
+            width: 100%;
+            border-radius: 10px;
+            border: none;
+        }
+
+        button{
+            position: relative;
+            padding: 5px;
+            width: 30%;
+            background-color: #ff6031;
+            border-radius: 10px;
+            border: none;
+            color: white;
+            font-family: $font;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        button:hover{
+            cursor: pointer;
+        }
+
+        .hidden-error{
+            display: none;
+        }
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+        font-weight: 800;
+        transition: .2s;
+    }
+
+    a:hover{
+        color: #ff6031;
+    }
+}
+
+.registr{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $font;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 10px;
+        width: 50%;
+        margin: 20px 0;
+
+        input{
+            font-family: $font;
+            height: 30px;
+            padding: 5px;
+            width: 100%;
+            border-radius: 10px;
+            border: none;
+        }
+
+        button{
+            position: relative;
+            padding: 5px;
+            width: 30%;
+            background-color: #ff6031;
+            border-radius: 10px;
+            border: none;
+            color: white;
+            font-family: $font;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        button:hover{
+            cursor: pointer;
+        }
+
+        .hidden-error{
+            display: none;
+        }
+    }
+}
+
+.home{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $font;
+    row-gap: 20px;
+
+    span{
+        color: #ff6031;
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+        font-weight: 800;
+        transition: .2s;
+        font-size: 25px;
+    }
+
+    a:hover{
+        color: #ff6031;
+    }
+}
