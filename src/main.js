@@ -1,13 +1,12 @@
 import { renderAuth } from "./pages/authorization/authorization";
 import { renderHome } from "./pages/home/home";
 import { renderRegistration } from "./pages/registration/registration";
+import { authCheck } from "./authCheck";
 import "./style/style.scss"
 
 const app = document.querySelector('#app');
 
-console.log(location.pathname);
-
-renderAuth(app);
+authCheck() ? renderHome(app) : renderAuth(app);
 
 switch (location.pathname) {
     case "/home":

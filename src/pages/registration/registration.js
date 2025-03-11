@@ -1,5 +1,3 @@
-import { renderHome } from "../home/home";
-
 export function renderRegistration(element){
     const reg = `
         <div class="container registr">
@@ -14,15 +12,15 @@ export function renderRegistration(element){
     `
 
     element.innerHTML = reg;
-    initCreateAccount(element);
+    initCreateAccount();
 }
 
-function initCreateAccount(element){
+function initCreateAccount(){
     const form = document.querySelector('form');
-    form.addEventListener('submit', (event) => submitForm(event, element));
+    form.addEventListener('submit', submitForm);
 }
 
-function submitForm(event, element){
+function submitForm(event){
     event.preventDefault();
     const {login, password} = event.target.elements;
     const user = {
@@ -44,6 +42,7 @@ function submitForm(event, element){
     else{
         usersList.push(user);
         localStorage.setItem('users', JSON.stringify(usersList));
-        renderHome(element);
+        console.log(location.pathname)
+        location.pathname = "/home";
     }
 }

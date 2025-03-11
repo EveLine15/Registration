@@ -1,5 +1,3 @@
-import { renderHome } from "../home/home";
-
 export function renderAuth(element){
     const auth = `
         <div class="container auth">
@@ -15,30 +13,30 @@ export function renderAuth(element){
     </div>
     `
     element.innerHTML = auth;
-    initSubmit(element);
+    initSubmit();
 }
 
-function initSubmit(element){
+function initSubmit(){
     const form = document.querySelector('form');
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        registrationCheck(element)
-    });
+    form.addEventListener('submit', registrationCheck);
 
     const regButton = document.querySelector('.reg-link');
     regButton.addEventListener('click', () => {
-        renderRegistration(element)
-    })
+        location.pathname = "/registr";
+    });
 }
 
-function registrationCheck(element){
+function registrationCheck(event){
+    event.preventDefault();
+    console.log(event.target)
     const {login, password} = event.target.elements;
     const user = {
         login: login.value,
         password: password.value,
         active: false
     }
-    const usersList = JSON.parse(localStorage.getItem('users'));
+    
+    const usersList = localStorage.getItem('users') ?  JSON.parse(localStorage.getItem('users')) : [];
     console.log(usersList);
     console.log(user);
     const authUser = usersList.find(el => el.login === user.login && el.password === user.password);
@@ -46,8 +44,8 @@ function registrationCheck(element){
         usersList.map(el => {
             if(el.login === authUser.login) el.active = true;
         });
-        localStorage.setItem('users', JSON.stringify(usersList))
-        renderHome(element);
+        localStorage.setItem('users', JSON.stringify(usersList));
+        location.pathname = "/home";
     }
     else {
         const errMessage = document.querySelector('.error');
