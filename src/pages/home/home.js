@@ -3,21 +3,25 @@ export function renderHome(element){
     const home = `
         <div class="container home">
       <h1>Thank you for registration, <span>${authUser.login}</span></h1>
-      <a href="auth">Log out</a>
+      <h3>Your age: <span>${authUser.age}</span></h3>
+      <h3>Your email: <span>${authUser.email}</span></h3>
+      <h3>Your company: <span>${authUser.company}</span></h3>
+      <a href="account">Change account</a>
+      <a href="auth" id="logOut">Log out</a>
     </div>
     `
   element.innerHTML = home;
   submitLogOut();
 }
 
-function checkAuth(){
+export function checkAuth(){
   const usersList = JSON.parse(localStorage.getItem('users'));
   const authUser = usersList.find(el => el.active);
   return authUser;
 }
 
 function submitLogOut(){
-  const linkBack = document.querySelector('a');
+  const linkBack = document.querySelector('#logOut');
   linkBack.addEventListener('click', logOut);
 }
 

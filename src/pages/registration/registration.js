@@ -5,6 +5,10 @@ export function renderRegistration(element){
       <form>
         <input type="text" placeholder="Create login" name="login">
         <input type="password" placeholder="Create password" name="password">
+        <h3>About you</h3>
+        <input type="number" placeholder="Your age" name="age">
+        <input type="email" placeholder="Your email" name="email">
+        <input type="text" placeholder="Your company" name="company">
         <p class="hidden-error error">Account already exists</p>
         <button>Sign up</button>
       </form>
@@ -22,10 +26,13 @@ function initCreateAccount(){
 
 function submitForm(event){
     event.preventDefault();
-    const {login, password} = event.target.elements;
+    const {login, password, age, email, company} = event.target.elements;
     const user = {
         login: login.value,
         password: password.value,
+        age: age.value,
+        email: email.value,
+        company: company.value,
         active: true
     }
 

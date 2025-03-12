@@ -103,6 +103,12 @@ body{
             border: none;
         }
 
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+}
+
         button{
             position: relative;
             padding: 5px;
@@ -148,5 +154,67 @@ body{
 
     a:hover{
         color: #ff6031;
+    }
+}
+
+.change{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $font;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 10px;
+        width: 50%;
+        margin: 20px 0;
+
+        label{
+            align-self: flex-start;
+            font-weight: 500;
+        }
+
+        input{
+            font-family: $font;
+            height: 30px;
+            padding: 5px;
+            width: 100%;
+            border-radius: 10px;
+            border: none;
+        }
+
+        input:focus {
+            outline: 3px solid#ff6031;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        button{
+            position: relative;
+            padding: 5px;
+            width: 30%;
+            background-color: #ff6031;
+            border-radius: 10px;
+            border: none;
+            color: white;
+            font-family: $font;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        button:hover{
+            cursor: pointer;
+        }
+
+        .hidden-error{
+            display: none;
+        }
     }
 }
