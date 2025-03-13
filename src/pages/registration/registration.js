@@ -55,7 +55,6 @@ function submitForm(event){
         const errMessage = document.querySelector('.error');
         errMessage.innerText = 'Fill all fields'
         errMessage.classList.remove('hidden-error');
-        event.target.reset();
     }
 
     else{

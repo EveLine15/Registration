@@ -7,15 +7,15 @@ export function renderAccount(element){
     <h1>Change account's data</h1>
       <form>
         <label for="login">Login</label>
-        <input type="text" placeholder="${authUser.login}" name="login">
+        <input type="text" value="${authUser.login}" name="login">
         <label for="password">Password</label>
-        <input type="password" placeholder="${authUser.password}" name="password">
+        <input type="password" value="${authUser.password}" name="password">
         <label for="age">Age</label>
-        <input type="number" placeholder="${authUser.age}" name="age">
+        <input type="number" value="${authUser.age}" name="age">
         <label for="email">Email</label>
-        <input type="email" placeholder="${authUser.email}" name="email">
+        <input type="email" value="${authUser.email}" name="email">
         <label for="company">Company</label>
-        <input type="text" placeholder="${authUser.company}" name="company">
+        <input type="text" value="${authUser.company}" name="company">
         <p class="hidden-error error">Account already exists</p>
         <button>Change</button>
       </form>
