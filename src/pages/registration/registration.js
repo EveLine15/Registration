@@ -9,7 +9,7 @@ export function renderRegistration(element){
         <input type="number" placeholder="Your age" name="age">
         <input type="email" placeholder="Your email" name="email">
         <input type="text" placeholder="Your company" name="company">
-        <p class="hidden-error error">Account already exists</p>
+        <p class="hidden-error error">Invalid</p>
         <button>Sign up</button>
       </form>
     </div>
@@ -36,12 +36,24 @@ function submitForm(event){
         active: true
     }
 
+    const isEmpty = Object.values(user).some(value => String(value || "").trim() === "");;
+
+    console.log(isEmpty);
+
     const usersList = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
     console.log(usersList);
 
     console.log(user.login);
     if(usersList.find(el => el.login === user.login)){
         const errMessage = document.querySelector('.error');
+        errMessage.innerText = 'Account already exsists'
+        errMessage.classList.remove('hidden-error');
+        event.target.reset();
+    }
+
+    else if(isEmpty){
+        const errMessage = document.querySelector('.error');
+        errMessage.innerText = 'Fill all fields'
         errMessage.classList.remove('hidden-error');
         event.target.reset();
     }
